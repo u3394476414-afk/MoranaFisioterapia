@@ -1,0 +1,135 @@
+/* Base Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #f8f9fa, #ffffff); /* Subtle gradient background */
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Module */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    transition: box-shadow 0.3s ease; /* Animation on hover/scroll */
+}
+header:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Hover animation */
+}
+#logo img {
+    transition: transform 0.3s ease; /* Scale animation on hover */
+}
+#logo img:hover {
+    transform: scale(1.05);
+}
+.navbar-nav .nav-link {
+    transition: color 0.3s ease; /* Smooth color change */
+}
+.navbar-nav .nav-link:hover {
+    color: #4681cf;
+}
+
+/* Section Module */
+section {
+    opacity: 0;
+    transform: translateY(20px); /* Fade-in animation on scroll */
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    padding: 40px 0;
+    border-bottom: 1px solid #eee; /* Clean section divider */
+}
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #4681cf;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle text shadow */
+}
+p, ul {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 15px; /* Concise spacing */
+}
+
+/* Components Module (Icons, Lists, etc.) */
+.icon-box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px; /* Reduced spacing for conciseness */
+    transition: transform 0.3s ease; /* Lift animation on hover */
+}
+.icon-box:hover {
+    transform: translateY(-5px);
+}
+.list-group-item {
+    border: none; /* Cleaner list */
+    padding: 10px 0;
+}
+
+/* Footer Module */
+footer {
+    background: linear-gradient(to top, #f8f9fa, #ffffff); /* Matching gradient */
+    padding: 20px 0;
+    text-align: center;
+}
+.social-icons a {
+    margin: 0 10px;
+    transition: opacity 0.3s ease; /* Fade animation on hover */
+}
+.social-icons a:hover {
+    opacity: 0.7;
+}
+
+/* Utilities Module */
+.hidden-info {
+    display: none;
+}
+
+/* Media Queries Module */
+@media (max-width: 768px) {
+    #logo img {
+        max-height: 100px;
+        width: auto;
+    }
+    .header-inner {
+        flex-direction: column;
+        align-items: center;
+    }
+    section {
+        padding: 20px 0;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+    .img-inner {
+        padding-top: 75%;
+    }
+    .social-icons a {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .icon-box-img {
+        width: 30px;
+    }
+    .icon-box-text h2 {
+        font-size: 1.2rem;
+    }
+}
+@media (max-width: 576px) {
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+@media (min-width: 769px) {
+    #hero {
+        height: auto; /* Ensure hero section is not too tall */
+        max-height: 60vh; /* Limit height to reduce page length */
+        overflow: hidden; /* Prevent prevent overflow */
+    }
+    .img-inner img {
+        object-fit: cover; /* Ensure image fits without stretching */
+    }
+}
