@@ -7,21 +7,17 @@ body {
     padding: 0;
 }
 
+.container-pers{
+   width:100%; 
+}
+
 /* Header Module */
 header {
     background-color: #fff;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
     transition: box-shadow 0.3s ease; /* Animation on hover/scroll */
 }
-header:hover {
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Hover animation */
-}
-#logo img {
-    transition: transform 0.3s ease; /* Scale animation on hover */
-}
-#logo img:hover {
-    transform: scale(1.05);
-}
+
 .navbar-nav .nav-link {
     transition: color 0.3s ease; /* Smooth color change */
 }

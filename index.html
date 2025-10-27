@@ -33,26 +33,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body class="home page-template-default page page-id-2 lightbox nav-dropdown-has-arrow">
-    <div id="wrapper" class="container-fluid"> <!-- Used container-fluid for full-width responsiveness -->
+    <div id="wrapper" class="container-pers"> <!-- Used container-fluid for full-width responsiveness -->
         <header id="header" class="header has-sticky sticky-jump">
-            <div class="header-wrapper">
+            <div class="header-wrapper py-3">
                 <div id="masthead" class="header-main show-logo-center">
-                    <div class="header-inner flex-row container logo-center medium-logo-center" role="navigation">
+                    <div class="header-inner flex-row container" role="navigation">
                         <!-- Logo -->
-                        <div id="logo" class="flex-col logo">
-                            <a href="https://www.moranaosteopata.it/" title="Dott. Giuseppe Morana - Osteopata e Fisioterapista Palermo" rel="home">
-                                <img width="393" height="220" src="https://www.moranaosteopata.it/wp-content/uploads/2021/10/logo-morana-osteopata-palermo.png" class="header_logo header-logo img-fluid" alt="Dott. Giuseppe Morana"> <!-- Added img-fluid for responsive images -->
-                                <img width="393" height="220" src="https://www.moranaosteopata.it/wp-content/uploads/2021/10/logo-morana-osteopata-palermo.png" class="header-logo-dark img-fluid" alt="Dott. Giuseppe Morana">
-                            </a>
+                        <div id="logo" class="flex-col logo d-flex justify-content-center">
+                            <img width="393" height="220" src="./img/logo.png" class="header_logo header-logo img-fluid" alt="Dott. Giuseppe Morana"> <!-- Added img-fluid for responsive images -->
                         </div>
                     </div>
                 </div>
-                <div id="wide-nav" class="header-bottom wide-nav flex-has-center d-none d-md-block"> <!-- Hide on mobile with d-none d-md-block -->
+                <div id="wide-nav" class="header-bottom wide-nav flex-has-center d-none d-md-block py-3"> <!-- Hide on mobile with d-none d-md-block -->
                     <div class="flex-row container">
                         <div class="flex-col hide-for-medium flex-center">
-                            <ul class="nav header-nav header-bottom-nav nav-center nav-size-xlarge nav-uppercase">
-                                <li class="html custom html_topbar_left"><strong class="h3"><span style="color: #4681cf;">FISIOTERAPISTA • MASSOFISIOTERAPISTA • OSTEOPATA PALERMO</span></strong></li>
-                            </ul>
+                            <div class="nav header-nav header-bottom-nav nav-center nav-size-xlarge nav-uppercase d-flex justify-content-center">
+                                <p class="html custom html_topbar_left m-0"><strong class="h3"><span style="color: #4681cf;">FISIOTERAPISTA • MASSOFISIOTERAPISTA • OSTEOPATA PALERMO</span></strong></p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -64,7 +61,7 @@
                     <div class="large-12 col">
                         <div class="col-inner">
                             <!-- Hero Section -->
-                            <section id="hero" class="row g-0"> <!-- Removed padding for better mobile fit -->
+                            <section id="hero" class="row g-0 px-5"> <!-- Removed padding for better mobile fit -->
                                 <div class="col-md-6 col-12 order-md-1 order-2"> <!-- Reorder for mobile: text first -->
                                     <div class="col-inner text-center">
                                         <!-- Contact Icons -->
@@ -99,11 +96,7 @@
                                 </div>
                                 <div class="col-md-6 col-12 order-md-2 order-1"> <!-- Image second on mobile -->
                                     <div class="col-inner text-center">
-                                        <div class="img has-hover x md-x lg-x y md-y lg-y" id="image_1233595334">
-                                            <div class="img-inner image-cover dark" style="padding-top:100%;">
-                                                <img fetchpriority="high" decoding="async" class="img-fluid" width="556" height="1024" src="https://www.moranaosteopata.it/wp-content/uploads/2021/10/giuseppe-morana-osteopata-palermo-556x1024.jpg" alt="Dott. Giuseppe Morana" srcset="https://www.moranaosteopata.it/wp-content/uploads/2021/10/giuseppe-morana-osteopata-palermo-556x1024.jpg 556w, https://www.moranaosteopata.it/wp-content/uploads/2021/10/giuseppe-morana-osteopata-palermo-163x300.jpg 163w, https://www.moranaosteopata.it/wp-content/uploads/2021/10/giuseppe-morana-osteopata-palermo.jpg 640w" sizes="(max-width: 556px) 100vw, 556px">
-                                            </div>
-                                        </div>
+                                        <img class="img-fluid" width="550" height="550" src="./img/dott_morana.png" alt="Dott. Giuseppe Morana"  >
                                     </div>
                                 </div>
                             </section>
