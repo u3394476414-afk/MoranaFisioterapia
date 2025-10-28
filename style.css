@@ -1,4 +1,15 @@
 /* Base Styles */
+/* Make sizing predictable and prevent elements from overflowing unexpectedly */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Ensure media elements scale within their containers to avoid horizontal overflow */
+img, picture, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
 body {
     font-family: 'Arial', sans-serif;
     background: linear-gradient(to bottom, #f8f9fa, #ffffff); /* Subtle gradient background */
@@ -16,6 +27,13 @@ header {
     background-color: #fff;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
     transition: box-shadow 0.3s ease; /* Animation on hover/scroll */
+}
+
+/* Center the small topbar line when present */
+.html.custom.html_topbar_left {
+    text-align: center;
+    width: 100%;
+    margin: 0 auto; /* respect existing m-0 but ensure centering */
 }
 
 .navbar-nav .nav-link {
@@ -78,20 +96,41 @@ footer {
     opacity: 0.7;
 }
 
+/* Center and size social icons consistently */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+.social-icons img {
+    width: 40px; /* slightly larger */
+    height: auto;
+    display: inline-block;
+}
+
 /* Utilities Module */
 .hidden-info {
-    display: none;
+    display: block; /* show address / hours */
+    font-size: 0.95rem;
+    color: #333;
+    margin: .25rem 0;
 }
 
 /* Media Queries Module */
 @media (max-width: 768px) {
     #logo img {
-        max-height: 100px;
+        max-height: 160px;
         width: auto;
     }
     .header-inner {
         flex-direction: column;
         align-items: center;
+    }
+    /* make header a bit taller on small screens so logo and topbar have breathing room */
+    header .header-wrapper {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
     }
     section {
         padding: 20px 0;
@@ -119,13 +158,58 @@ footer {
         padding-right: 15px;
     }
 }
+/* Ensure hero picture and img remain visible and scale on very small viewports */
+#hero picture,
+#hero picture img,
+.hero-image {
+    display: block;
+    width: 100%;      /* mobile: full width of column */
+    height: auto;
+    border-radius: 16px; /* rounded corners */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12); /* soft drop shadow */
+    transition: transform .18s ease, box-shadow .18s ease;
+}
+
+/* Center contact icons horizontally on small screens */
+@media (max-width: 767.98px) {
+    .icon-box {
+        justify-content: center; /* horizontally center icon + text */
+    }
+    .icon-box-text {
+        text-align: center;
+    }
+    .icon-box .icon-svg {
+        margin-right: 8px; /* spacing between icon and text */
+        flex: 0 0 36px;
+    }
+}
 @media (min-width: 769px) {
     #hero {
-        height: auto; /* Ensure hero section is not too tall */
-        max-height: 60vh; /* Limit height to reduce page length */
-        overflow: hidden; /* Prevent prevent overflow */
+        height: auto; /* let content determine height */
+        max-height: none; /* do not artificially crop the content */
+        overflow: visible; /* allow full image to show */
     }
     .img-inner img {
-        object-fit: cover; /* Ensure image fits without stretching */
+        object-fit: contain; /* avoid cropping on large screens */
+        max-width: 100%;
+        height: auto;
+    }
+    /* Reduce header vertical size by ~40% on desktop */
+    header .header-wrapper {
+        padding-top: 0.6rem; /* was ~1rem (py-3) — reduced to ~60% */
+        padding-bottom: 0.6rem;
+    }
+    /* Reduce logo visual height to match smaller header */
+    #logo img {
+        max-height: 132px; /* 220 * 0.6 ~= 132 */
+        width: auto;
+    }
+    /* Limit hero image on desktop: use clamp so it scales but never becomes too large */
+    .hero-image {
+        width: 100%;
+        max-width: clamp(220px, 35vw, 420px); /* min 220px, ~35% of viewport, max 420px */
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
     }
 }
